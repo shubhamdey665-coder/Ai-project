@@ -16,24 +16,18 @@ function AnimatedGlobe() {
         </mesh>
 
         <mesh>
-          <sphereGeometry args={[2.55, 96, 96]} />
+          <sphereGeometry args={[2.65, 96, 96]} />
           <meshStandardMaterial
-            color="#7c3aed"
+            color="#a855f7"
             wireframe
             transparent
-            opacity={0.18}
+            opacity={0.22}
             emissive="#a855f7"
             emissiveIntensity={1}
           />
         </mesh>
 
-        <Sparkles
-          count={180}
-          scale={5}
-          size={4}
-          speed={1.5}
-          color="#ffffff"
-        />
+        <Sparkles count={220} scale={5.5} size={4} speed={1.7} />
       </group>
     </Float>
   );
@@ -41,21 +35,17 @@ function AnimatedGlobe() {
 
 export default function GoalGlobe() {
   return (
-    <div className="globe-box">
+    <div className="globeBox">
       <Canvas camera={{ position: [0, 0, 7], fov: 55 }}>
         <ambientLight intensity={1.5} />
         <pointLight position={[5, 5, 5]} intensity={3} />
         <pointLight position={[-5, -5, -5]} intensity={2} />
 
-        <Stars radius={120} depth={80} count={6000} factor={5} fade />
+        <Stars radius={120} depth={80} count={7000} factor={5} fade />
 
         <AnimatedGlobe />
 
-        <OrbitControls
-          enableZoom={false}
-          autoRotate
-          autoRotateSpeed={3}
-        />
+        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={3} />
       </Canvas>
     </div>
   );
